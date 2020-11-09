@@ -1,0 +1,19 @@
+{
+  "name": "eschool_apis",
+  "version": "1.0.0",
+  "description": "''\u001b[Dcontains apis for the e-school project'",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\u0016https://github.com/AVNV2201/eSchool_APIs.git"
+  },
+  "author": "AVNV2201",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.13"
+  }
+}
