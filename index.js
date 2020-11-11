@@ -19,6 +19,8 @@ mongoose.connect('mongodb://localhost:27017/eSchool',{
 const studentRoutes = require('./routes/students');
 const classRoutes = require('./routes/class');
 const teacherRoutes = require( './routes/teacher');
+const subjectRoutes = require('./routes/subject');
+const announcementRoutes = require('./routes/announcement');
 
 app.set('views', path.join(__dirname,'views'));
 app.set('view engine', 'ejs');
@@ -34,6 +36,8 @@ app.get( '/api' , ( req, res ) => {
 app.use( '/api/student', studentRoutes );
 app.use( '/api/class', classRoutes );
 app.use( '/api/teacher', teacherRoutes );
+app.use( '/api/subject', subjectRoutes );
+app.use( '/api/announcement', announcementRoutes );
 
 app.use( ( req, res ) => {
       res.status(404).json({});

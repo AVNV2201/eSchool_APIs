@@ -31,9 +31,21 @@ DELETE | /api/teacher/id | DELETE TEACHER FROM DB
 ### SUBJECT ROUTES
 REQUEST TYPE | ROUTE | DESCRIPTION
 -------------|-------|------------
+GET | /api/subject?classId= | GET LIST OF ALL SUBJECTS OF A CLASS
+GET | /api/subject?teacherId= | GET LIST OF ALL SUBJECTS OF A TEACHER
+POST | /api/subject | ADD A SUBJECT TO DB
+GET | /api/subject/id | GET DETAILS OF A SUBJECT
+PUT | /api/subject/id | MODIFY DETAILS OF A SUBJECT
+DELETE | /api/subject/id | DELETE SUBJECT FROM DB
 ### ANNOUNCEMENT ROUTES
 REQUEST TYPE | ROUTE | DESCRIPTION
 -------------|-------|------------
+GET | /api/announcement?classId= | GET ALL ANNOUNCEMENTS OF A CLASS
+GET | /api/announcement?subjectId= | GET ALL ANNOUNCEMENTS OF A SUBJECT
+POST | /api/announcement | ADD AN ANNOUNCEMENT
+GET | /api/announcement/id | GET AN ANNOUNCEMENT
+PUT | /api/announcement/id | EDIT AN ANNOUNCEMENT
+DELETE | /api/announcement/id | DELETE AN ANNOUNCEMENT
 ### ATTENDANCE ROUTES
 REQUEST TYPE | ROUTE | DESCRIPTION
 -------------|-------|------------
