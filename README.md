@@ -15,6 +15,20 @@ DELETE | /api/student/id | DELETE STUDENT FROM DB
 ### CLASS ROUTES
 REQUEST TYPE | ROUTE | DESCRIPTION
 -------------|-------|------------
+GET | /api/class | GET THE LIST OF ALL CLASSES
+POST | /api/class | ADD A CLASS
+GET | /api/class/id | GET DETAILS OF A CLASS
+PUT | /api/class/id | MODIFY DETAILS OF CLASS
+DELETE | /api/class/id | DELETE A CLASS
 ### TEACHER ROUTES
+REQUEST TYPE | ROUTE | DESCRIPTION
+-------------|-------|------------
+### SUBJECT ROUTES
+REQUEST TYPE | ROUTE | DESCRIPTION
+-------------|-------|------------
+### ANNOUNCEMENT ROUTES
+REQUEST TYPE | ROUTE | DESCRIPTION
+-------------|-------|------------
+### ATTENDANCE ROUTES
 REQUEST TYPE | ROUTE | DESCRIPTION
 -------------|-------|------------

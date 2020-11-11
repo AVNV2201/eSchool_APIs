@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Student = require('./models/students');
+const Class = require('./models/class');
 
 mongoose.connect('mongodb://localhost:27017/eSchool',{
       useNewUrlParser: true,
@@ -52,7 +53,22 @@ const studentsList = [
       }
 ]
 
-const addEntities = async () => {
+const classList = [
+      { name: '5 A' },
+      { name: '5 B' },
+      { name: '6 A' },
+      { name: '6 B' },
+      { name: '7 A' },
+      { name: '7 B' },
+      { name: '8 A' },
+      { name: '8 B' },
+      { name: '9 A' },
+      { name: '9 B' },
+      { name: '10 A' },
+      { name: '10 B' }
+]
+
+const addStudents = async () => {
       await Student.insertMany(studentsList)
       .then( l => {
             console.log(l);
@@ -63,7 +79,18 @@ const addEntities = async () => {
       } )
 }
 
-const removeAll = async () => {
+const addClasses = async () => {
+      await Class.insertMany(classList)
+      .then( l => {
+            console.log(l);
+      } )
+      .catch( err => {
+            console.log('SOMETHNG WENT WRONG');
+            console.log(err);
+      } )
+}
+
+const removeAllStudents = async () => {
       await Student.deleteMany({})
       .then( p => {
             console.log(p);
@@ -74,5 +101,18 @@ const removeAll = async () => {
       })
 }
 
-addEntities();
-// removeAll();
+const removeAllClasses = async () => {
+      await Class.deleteMany({})
+      .then( p => {
+            console.log(p);
+      } )
+      .catch( err => {
+            console.log('UNABLE TO DELETE !!!');
+            console.log(err);
+      })
+}
+
+// addStudents();
+// removeAllStudents();
+// addClasses();
+// removeAllClasses();
