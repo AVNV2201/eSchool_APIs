@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Student = require('./models/students');
 const Class = require('./models/class');
+const Teacher = require('./models/teacher');
 
 mongoose.connect('mongodb://localhost:27017/eSchool',{
       useNewUrlParser: true,
@@ -68,6 +69,45 @@ const classList = [
       { name: '10 B' }
 ]
 
+const teacherList = [
+      {
+            name: 'Dinesh Giri',
+            dob: '1969/02/11',
+            gender: 'male',
+            email: 'dgiri.davjrd@gmail.com',
+            mobile: '9424654565',
+            designation: 'TGT',
+            employeeId: '12345efg'
+      },
+      {
+            name: 'Manish Mishra',
+            dob: '1969/02/11',
+            gender: 'male',
+            email: 'mm.davjrd@gmail.com',
+            mobile: '9424654565',
+            designation: 'PGT',
+            employeeId: '12345efg'
+      },
+      {
+            name: 'DN Dubey',
+            dob: '1969/02/11',
+            gender: 'male',
+            email: 'dnd.davjrd@gmail.com',
+            mobile: '9424654565',
+            designation: 'TGT',
+            employeeId: '12345efg'
+      },
+      {
+            name: 'Rina Singh',
+            dob: '1969/02/11',
+            email: 'rs.davjrd@gmail.com',
+            gender: 'female',
+            mobile: '9424654565',
+            designation: 'TGT',
+            employeeId: '12345efg'
+      }
+]
+
 const addStudents = async () => {
       await Student.insertMany(studentsList)
       .then( l => {
@@ -81,6 +121,17 @@ const addStudents = async () => {
 
 const addClasses = async () => {
       await Class.insertMany(classList)
+      .then( l => {
+            console.log(l);
+      } )
+      .catch( err => {
+            console.log('SOMETHNG WENT WRONG');
+            console.log(err);
+      } )
+}
+
+const addTeacher = async () => {
+      await Teacher.insertMany(teacherList)
       .then( l => {
             console.log(l);
       } )
@@ -112,7 +163,20 @@ const removeAllClasses = async () => {
       })
 }
 
+const removeAllTeachers = async () => {
+      await Teacher.deleteMany({})
+      .then( p => {
+            console.log(p);
+      } )
+      .catch( err => {
+            console.log('UNABLE TO DELETE !!!');
+            console.log(err);
+      })
+}
+
 // addStudents();
 // removeAllStudents();
 // addClasses();
 // removeAllClasses();
+addTeacher();
+// removeAllTeachers();

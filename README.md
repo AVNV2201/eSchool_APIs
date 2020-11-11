@@ -23,6 +23,11 @@ DELETE | /api/class/id | DELETE A CLASS
 ### TEACHER ROUTES
 REQUEST TYPE | ROUTE | DESCRIPTION
 -------------|-------|------------
+GET | /api/teacher | GET LIST OF ALL TEACHERS
+POST | /api/teacher | ADD A TEACHER TO DB
+GET | /api/teacher/id | GET DETAILS OF A TEACHER
+PUT | /api/teacher/id | MODIFY DETAILS OF A TEACHER
+DELETE | /api/teacher/id | DELETE TEACHER FROM DB
 ### SUBJECT ROUTES
 REQUEST TYPE | ROUTE | DESCRIPTION
 -------------|-------|------------
