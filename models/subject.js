@@ -8,9 +8,13 @@ const subjectSchema = new Schema({
       },
       classId: {
             type: Schema.Types.ObjectId,
-            required: true
+            required: true,
+            ref: 'Class'
       },
-      teacherId: Schema.Types.ObjectId,
+      teacherId: {
+            type: Schema.Types.ObjectId,
+            ref: 'Teacher'
+      },
       workingDays: [Date]
 })
 

@@ -8,6 +8,7 @@ const announcementSchema = new Schema({
             required: true
       },
       description: String,
+      imageUrl: String,
       classId: Schema.Types.ObjectId,
       subjectId: Schema.Types.ObjectId
 })

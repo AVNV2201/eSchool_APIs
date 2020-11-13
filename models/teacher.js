@@ -24,6 +24,10 @@ const teacherSchema = new Schema({
             lowercase: true,
             enum: ['male','female','other']
       },
+      profileImageUrl: {
+            type: String,
+            unique: true
+      },
       designation: {
             type: String
       },

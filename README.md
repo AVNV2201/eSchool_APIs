@@ -49,3 +49,20 @@ DELETE | /api/announcement/id | DELETE AN ANNOUNCEMENT
 ### ATTENDANCE ROUTES
 REQUEST TYPE | ROUTE | DESCRIPTION
 -------------|-------|------------
+GET | /api/attendance?studentId= | GET ATTENDANCE OF ALL SUBJECTS OF A STUDENT
+GET | /api/attendance?subjectId= | GET ATTENDANCE OF ALL STUDENTS OF A SUBJECT
+GET | /api/attendance?studentId=id&subjectId=id | GET ATTENDANCE OF A STUDENT OF A SUBJECT
+POST | /api/attendance?studentId=id&subjectId=id | MODIFY ATTENDANCE OF A STUDENT OF A SUBJECT
+### QUIZ ROUTES
+REQUEST TYPE | ROUTE | DESCRIPTION
+-------------|-------|------------
+GET | /api/quiz?subjectId= |   GET ALL QUIZES OF SUBJECT
+POST | /api/quiz | ADD A QUIZ
+GET | /api/quiz/id | GET A QUIZ
+PUT | /api/quiz/id | MODIFY A QUIZ
+DELETE | /api/quiz/id | DELETE A QUIZ
+GET | /api/question?quizId= | GET ALL QUESTIONS OF A QUIZ
+POST | /api/question | ADD A QUESTION TO QUIZ
+GET | /api/question/id | GET A QUESTION OF A QUIZ
+PUT | /api/question/id | MODIFY QUESTION 
+DELETE | /api/question/id | DELETE A QUESTION 

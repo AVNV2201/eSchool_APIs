@@ -14,7 +14,7 @@ callbacks.getAll = ( req, res ) => {
             })
       }
       else{
-            Student.find({})
+            Student.find({}).populate('class')
             .then( students => {
                   // console.log(students);
                   res.json(students);
@@ -27,7 +27,7 @@ callbacks.getAll = ( req, res ) => {
 
 callbacks.getStudent = ( req, res ) => {
       const { id } = req.params;
-      Student.findById(id)
+      Student.findById(id).populate('class')
       .then( student => {
             res.json(student);
       } )

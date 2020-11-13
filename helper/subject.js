@@ -5,7 +5,7 @@ const callbacks = {};
 callbacks.getSubjectList = ( req, res ) => {
       const { classId, teacherId } = req.query;
       if( classId ){
-            Subject.find( { classId: classId } )
+            Subject.find( { classId: classId } ).populate('teacherId')
             .then( subjects => {
                   res.json(subjects);
             } )
@@ -14,7 +14,7 @@ callbacks.getSubjectList = ( req, res ) => {
             })
       }
       else if( teacherId ){
-            Subject.find( { teacherId: teacherId } )
+            Subject.find( { teacherId: teacherId } ).populate('classId')
             .then( subjects => {
                   res.json(subjects);
             } )
@@ -29,7 +29,7 @@ callbacks.getSubjectList = ( req, res ) => {
 
 callbacks.getSubject = ( req, res ) => {
       const { id } = req.params;
-      Subject.findById(id)
+      Subject.findById(id).populate('Teacher').populate('Class')
       .then( subject => {
             res.json(subject);
       } )

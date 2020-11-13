@@ -24,6 +24,10 @@ const studentSchema = new Schema({
             lowercase: true,
             enum: ['male','female','other']
       },
+      profileImageUrl: {
+            type: String,
+            unique: true
+      },
       rollNo: {
             type: Number,
             min: 1
@@ -34,6 +38,7 @@ const studentSchema = new Schema({
       },
       class: {
             type: Schema.Types.ObjectId,
+            ref : 'Class'
       } ,
       attendance: {
             type: [Date],
