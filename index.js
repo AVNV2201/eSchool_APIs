@@ -3,6 +3,8 @@ const app = express();
 const mongoose = require('mongoose');
 const path = require('path')
 const methodOverride = require('method-override');
+const marked = require('marked');
+const fs = require('fs');
 
 mongoose.connect('mongodb://localhost:27017/eSchool',{
       useNewUrlParser: true,
@@ -31,7 +33,13 @@ app.use( express.json() );
 app.use( express.urlencoded( { extended: true } ) );
 
 app.get( '/api' , ( req, res ) => {
-      res.render('index');
+      const path = __dirname + '/README.md';
+      fs.readFile( path, 'utf8', ( err, data ) => {
+            if( err ){
+                  res.status(404).send(err);
+            }
+            res.send(marked(data.toString()));
+      } )
 } )
 
 app.use( '/api/student', studentRoutes );
@@ -40,19 +48,6 @@ app.use( '/api/teacher', teacherRoutes );
 app.use( '/api/subject', subjectRoutes );
 app.use( '/api/announcement', announcementRoutes );
 app.use('/api/attendance', attendanceRoutes );
-
-app.get( '/test', ( req, res ) => {
-      const { a, b, c } = req.query;
-      if( a && b && c ){
-            console.log(a,b,c);
-      }
-      else if( a && c ){
-            console.log('only a and c are here', a, c );
-      }
-      else{
-            console.log('No parameters found');
-      }
-} )
 
 app.use( ( req, res ) => {
       res.status(404).json({});
