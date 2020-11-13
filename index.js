@@ -21,6 +21,7 @@ const classRoutes = require('./routes/class');
 const teacherRoutes = require( './routes/teacher');
 const subjectRoutes = require('./routes/subject');
 const announcementRoutes = require('./routes/announcement');
+const attendanceRoutes = require('./routes/attendance');
 
 app.set('views', path.join(__dirname,'views'));
 app.set('view engine', 'ejs');
@@ -38,6 +39,20 @@ app.use( '/api/class', classRoutes );
 app.use( '/api/teacher', teacherRoutes );
 app.use( '/api/subject', subjectRoutes );
 app.use( '/api/announcement', announcementRoutes );
+app.use('/api/attendance', attendanceRoutes );
+
+app.get( '/test', ( req, res ) => {
+      const { a, b, c } = req.query;
+      if( a && b && c ){
+            console.log(a,b,c);
+      }
+      else if( a && c ){
+            console.log('only a and c are here', a, c );
+      }
+      else{
+            console.log('No parameters found');
+      }
+} )
 
 app.use( ( req, res ) => {
       res.status(404).json({});
