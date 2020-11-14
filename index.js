@@ -24,6 +24,9 @@ const teacherRoutes = require( './routes/teacher');
 const subjectRoutes = require('./routes/subject');
 const announcementRoutes = require('./routes/announcement');
 const attendanceRoutes = require('./routes/attendance');
+const quizRoutes = require('./routes/quiz');
+const questionRoutes = require('./routes/question');
+const answerRoutes = require('./routes/answer');
 
 app.set('views', path.join(__dirname,'views'));
 app.set('view engine', 'ejs');
@@ -48,6 +51,9 @@ app.use( '/api/teacher', teacherRoutes );
 app.use( '/api/subject', subjectRoutes );
 app.use( '/api/announcement', announcementRoutes );
 app.use('/api/attendance', attendanceRoutes );
+app.use('/api/quiz',quizRoutes);
+app.use('/api/question', questionRoutes);
+app.use('/api/answer', answerRoutes);
 
 app.use( ( req, res ) => {
       res.status(404).json({});

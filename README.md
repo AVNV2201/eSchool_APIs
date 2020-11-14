@@ -66,3 +66,13 @@ POST | /api/question | ADD A QUESTION TO QUIZ
 GET | /api/question/id | GET A QUESTION OF A QUIZ
 PUT | /api/question/id | MODIFY QUESTION 
 DELETE | /api/question/id | DELETE A QUESTION 
+GET | /api/answer?quizId= | GET ALL RESPONSES OF A QUIZ
+GET | /api/answer?quizId=id&studentId=id | GET ALL RESPONSES OF A STUDENT OF A QUIZ
+POST | /api/answer | SUBMIT A RESPONSE
+GET | /api/answer/id | GET A SPECIFIC RESPONSE BY ITS ID
+PUT | /api/answer/id | MODIFY A RESPONSE ( SHOULD NOT ALLOWED TO TAMPER THE RESPONSE SO AVOID USING THIS API ) 
+DELETE | /api/answer/id | DELETE A REPONSE
+DELETE | /api/answer?quizId= | DELETE ALL RESPONSES OF A QUIZ
+DELETE | /api/answer?studentId= | DELETE ALL RESPONSES OF STUDENT
+DELETE | /api/answer?quizId=id&studentId=id | DELETE A RESPONSE OF A STUDENT OF A QUIZ
+
