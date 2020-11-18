@@ -2,10 +2,9 @@ const mongoose = require('mongoose');
 const Student = require('./models/students');
 const Class = require('./models/class');
 const Teacher = require('./models/teacher');
-const dbUrl = 'mongodb+srv://avnvhere:x0fh7aT7j0lNOcI8@cluster0.ox9n2.mongodb.net/eSchool?retryWrites=true&w=majority'
+const secret = require('./secret');
 
-
-mongoose.connect( dbUrl ,{
+mongoose.connect( secret.dbUrl ,{
       useNewUrlParser: true,
       useUnifiedTopology: true
 })
@@ -18,15 +17,15 @@ mongoose.connect( dbUrl ,{
       })
 
 const studentsList = [
-      // {
-      //       name: 'Abhinav Kumar giri',
-      //       regNo: '20174045',
-      //       email: 'abhinav.cs2201@gmail.com',
-      //       dob: '1999/03/23',
-      //       gender: 'male',
-      //       rollNo: 4,
-      //       mobileNo: '9424651598'
-      // },
+      {
+            name: 'Abhinav Kumar giri',
+            regNo: '20174045',
+            email: 'abhinav.cs2201@gmail.com',
+            dob: '1999/03/23',
+            gender: 'male',
+            rollNo: 4,
+            mobileNo: '9424651598'
+      },
       {
             name: 'Amrita Kumari',
             regNo: '20178080',

@@ -5,9 +5,9 @@ const path = require('path')
 const methodOverride = require('method-override');
 const marked = require('marked');
 const fs = require('fs');
-const dbUrl = 'mongodb+srv://avnvhere:x0fh7aT7j0lNOcI8@cluster0.ox9n2.mongodb.net/eSchool?retryWrites=true&w=majority'
+const secret = require('./secret');
 
-mongoose.connect( dbUrl ,{
+mongoose.connect( secret.dbUrl ,{
       useNewUrlParser: true,
       useUnifiedTopology: true
 })
