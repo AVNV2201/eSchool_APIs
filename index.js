@@ -5,8 +5,9 @@ const path = require('path')
 const methodOverride = require('method-override');
 const marked = require('marked');
 const fs = require('fs');
+const dbUrl = 'mongodb+srv://avnvhere:x0fh7aT7j0lNOcI8@cluster0.ox9n2.mongodb.net/eSchool?retryWrites=true&w=majority'
 
-mongoose.connect('mongodb://localhost:27017/eSchool',{
+mongoose.connect( dbUrl ,{
       useNewUrlParser: true,
       useUnifiedTopology: true
 })
@@ -59,6 +60,7 @@ app.use( ( req, res ) => {
       res.status(404).json({});
 } )
 
-app.listen( 3000, () => {
-      console.log('APP IS LISTENING ON PORT 3000')
+const port = process.env.PORT || 3000
+app.listen( port, () => {
+      console.log(`APP IS LISTENING ON PORT {port} `)
 })

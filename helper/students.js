@@ -16,7 +16,7 @@ callbacks.getAll = ( req, res ) => {
       else{
             Student.find({}).populate('class')
             .then( students => {
-                  // console.log(students);
+                  console.log(students);
                   res.json(students);
             } )
             .catch( err => {

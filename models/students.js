@@ -26,7 +26,7 @@ const studentSchema = new Schema({
       },
       profileImageUrl: {
             type: String,
-            unique: true
+            default: ""
       },
       rollNo: {
             type: Number,
